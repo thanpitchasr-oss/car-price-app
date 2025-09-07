@@ -46,4 +46,5 @@ input_data = np.array([[mileage, engine_cc, car_age, owner_count,
 
 if st.button("ทำนายราคา"):
     prediction = model.predict(input_data)
+    st.balloons()
     st.markdown(f"<h1 style='color:green'>✅ ราคาที่ทำนายได้: {prediction[0]:,.2f} USD</h1>", unsafe_allow_html=True)
