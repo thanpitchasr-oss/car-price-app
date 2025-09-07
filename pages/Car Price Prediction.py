@@ -47,6 +47,6 @@ input_data = np.array([[mileage, engine_cc, car_age, owner_count,
 import time
 if st.button("ทำนายราคา"):
     with st.spinner('กำลังคิดราคารถของคุณ...'):
-        time.sleep(2)  # เพิ่ม delay ให้ดูเหมือนกำลังประมวลผล
+        time.sleep(4)  # เพิ่ม delay ให้ดูเหมือนกำลังประมวลผล
         prediction = model.predict(input_data)
     st.success(f"✅ ราคาที่ทำนายได้: {prediction[0]:,.2f} USD")
