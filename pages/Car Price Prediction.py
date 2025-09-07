@@ -44,14 +44,7 @@ input_data = np.array([[mileage, engine_cc, car_age, owner_count,
                         service_encoded, fuel_type_encoded,
                         brand_encoded, trans_encoded, color_encoded]])
 
-import time
-if st.button("**ทำนายราคา**"):
-    with st.spinner('กำลังคิดราคารถของคุณ...'):
-        time.sleep(2.5)  # เพิ่ม delay ให้เหมือนกำลังประมวลผล
-        prediction = model.predict(input_data)
-    
-    # แสดงผลใหญ่ขึ้น
-    st.markdown(
-        f'<h1 style="color:green; font-size:60px;">🚗💨 ราคาที่ทำนายได้: {prediction[0]:,.2f} USD</h1>', 
-        unsafe_allow_html=True
-    )
+import time if st.button("**ทำนายราคา**"): 
+  with st.spinner('กำลังคิดราคารถของคุณ...'): time.sleep(2.5) # เพิ่ม delay ให้ดูเหมือนกำลังประมวลผล 
+    prediction = model.predict(input_data) 
+st.success(f"🚗💨 ราคาที่ทำนายได้: {prediction[0]:,.2f} USD")
